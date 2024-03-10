@@ -1,0 +1,3 @@
+noreply@dmarc.yahoo.com
+dmarc_reports@bmwgroup.com
+dmarc_reports@reports.emailsrvr.com

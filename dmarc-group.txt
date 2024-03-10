@@ -1,0 +1,10 @@
+noreply-dmarc-support@google.com
+dmarcreport@microsoft.com
+no-reply@uk-1.mimecastreport.com
+noreply-dmarc@zoho.com
+reporting@dmarc25.jp
+shr-dmarcfeedback@marriott.com
+no-reply@us-1.mimecastreport.com
+dmarc_support@corp.mail.ru
+postmaster@amazonses.com
+no-reply@us-4.mimecastreport.com
