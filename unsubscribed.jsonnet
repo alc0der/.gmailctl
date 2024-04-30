@@ -3,7 +3,6 @@ local h = import 'helpers.libsonnet';
 local unsubscribed = importstr 'unsubscribed.txt';
 
 local unsubscribedAction = {
-  archive: true,
   labels: ['unsubscribed'],
 };
 
