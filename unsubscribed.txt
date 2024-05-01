@@ -5,3 +5,6 @@ aneta.szotek@hello.hotjar.com
 noreply@info.mail.amadeus.com
 hamad.janahi@ejuniper.com
 matthew@looka.com
+academy@hackthebox.com
+sc-noreply@google.com
+priya.sisodia@thinkowl.com

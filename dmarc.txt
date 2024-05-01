@@ -1,3 +1,5 @@
 noreply@dmarc.yahoo.com
 dmarc_reports@bmwgroup.com
 dmarc_reports@reports.emailsrvr.com
+abuse@seznam.cz
+dmarcfeedback@esa.afkl.c3s2.iphmx.com

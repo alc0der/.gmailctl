@@ -9,3 +9,4 @@ dmarc_support@corp.mail.ru
 postmaster@amazonses.com
 no-reply@us-4.mimecastreport.com
 dmarcreports@secureserver.net
+reports@fastmaildmarc.com
