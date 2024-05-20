@@ -10,3 +10,5 @@ postmaster@amazonses.com
 no-reply@us-4.mimecastreport.com
 dmarcreports@secureserver.net
 reports@fastmaildmarc.com
+noreply@dmarc.yahoo.com
+henleyglobal.com

@@ -3,3 +3,7 @@ dmarc_reports@bmwgroup.com
 dmarc_reports@reports.emailsrvr.com
 abuse@seznam.cz
 dmarcfeedback@esa.afkl.c3s2.iphmx.com
+noreply-dmarc-report@onamae-server.com
+
+dmarcreports@secureserver.net
+noreply-dmarc-report@conoha.jp
