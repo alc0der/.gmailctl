@@ -12,3 +12,8 @@ dmarcreports@secureserver.net
 reports@fastmaildmarc.com
 noreply@dmarc.yahoo.com
 henleyglobal.com
+noreply-dmarc-report@rediffmailpro.com
+no-reply@za-1.mimecastreport.com
+no-reply@ezweb.ne.jp
+no-reply@ezweb.ne.jp
+dmarc-noreply@linkedin.com
