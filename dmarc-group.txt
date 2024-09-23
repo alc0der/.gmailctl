@@ -18,3 +18,10 @@ no-reply@ezweb.ne.jp
 no-reply@ezweb.ne.jp
 dmarc-noreply@linkedin.com
 DMARCfeedback@dsv.com
+no-reply@dmarc-report.home.pl
+no-reply@eu-2.mimecastreport.com
+dmarc@sykam.com
+smarter@intel-mail.com
+dmarc-operations@area1security.com
+postmaster@liaa.gov.lv
+dmarc@ati.com.ph

@@ -8,3 +8,4 @@ noreply-dmarc-report@onamae-server.com
 dmarcreports@secureserver.net
 noreply-dmarc-report@conoha.jp
 postmaster@3dprinting.com.tw
+dmarc@intel-email.com
