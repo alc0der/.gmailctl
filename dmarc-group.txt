@@ -25,3 +25,5 @@ smarter@intel-mail.com
 dmarc-operations@area1security.com
 postmaster@liaa.gov.lv
 dmarc@ati.com.ph
+dmarc@infomaniak.com
+noreply-spamdigest@google.com
