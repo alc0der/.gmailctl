@@ -27,3 +27,7 @@ postmaster@liaa.gov.lv
 dmarc@ati.com.ph
 dmarc@infomaniak.com
 noreply-spamdigest@google.com
+no-reply@reformit.esvacloud.com
+dmarc-support@alerts.comcast.net
+dmarc-support@alerts.comcast.net
+no-reply@au-1.mimecastreport.com
