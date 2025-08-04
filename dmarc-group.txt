@@ -31,3 +31,14 @@ no-reply@reformit.esvacloud.com
 dmarc-support@alerts.comcast.net
 dmarc-support@alerts.comcast.net
 no-reply@au-1.mimecastreport.com
+dmarc-reports@lolipop.jp
+dmarc-support@wp.pl
+noreply-dmarc-reports@domeneshop.no
+dmarc-support@wp.pl
+postmaster@phino.com
+dmarc-reports@lolipop.jp
+dmarc@un.org
+no-reply@hukstafilt01.hostinguk.net
+dmarc_reports@bmwgroup.com
+dmarc_reports@bmwgroup.com
+no-reply@spamfilterc.hostingsystems.co.uk
