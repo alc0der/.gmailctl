@@ -42,3 +42,7 @@ no-reply@hukstafilt01.hostinguk.net
 dmarc_reports@bmwgroup.com
 dmarc_reports@bmwgroup.com
 no-reply@spamfilterc.hostingsystems.co.uk
+no-reply@ca-1.mimecastreport.com
+dmarc-report@muenchen.de
+noreply-emea@allianz.com
+Bell.CorpMail.Dmarc@bell.ca
