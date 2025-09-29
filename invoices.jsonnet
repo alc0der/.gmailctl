@@ -257,6 +257,7 @@ local appleRules = [
     },
 ];
 
+
 // OpenAI
 local openAIRules = [
     {
@@ -273,6 +274,15 @@ local openAIRules = [
     },
 ];
 
+// Beno
+local benoRules = [
+    {
+        filter: {
+          from: env.invoice_beno_email,
+        },
+        actions: archiveInvoice,
+    },
+];
 
 cypressRules +
 slackRules +
@@ -289,4 +299,5 @@ auth0Rules +
 twilioRules +
 opsgenieRules +
 appleRules +
-openAIRules
+openAIRules +
+benoRules
