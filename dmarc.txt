@@ -12,3 +12,5 @@ dmarc@intel-email.com
 dmarc-reports@heteml.jp
 postmaster@qatarairways.com.qa
 noreply-dmarc@tmes.trendmicro.eu
+Postmaster@jcom.zaq.ne.jp
+Postmaster@jcom.zaq.ne.jp

@@ -284,6 +284,23 @@ local benoRules = [
     },
 ];
 
+// 55 Degrees
+local fiftyFiveDegreesRules = [
+    {
+        filter: {
+          and: [
+            {
+              from: 'support@55degrees.se',
+            },
+            {
+              to: 'invoice@beno.com',
+            },
+          ],
+        },
+        actions: archiveInvoice,
+    },
+];
+
 cypressRules +
 slackRules +
 googleWorkspaceRules +
@@ -300,4 +317,5 @@ twilioRules +
 opsgenieRules +
 appleRules +
 openAIRules +
-benoRules
+benoRules +
+fiftyFiveDegreesRules
