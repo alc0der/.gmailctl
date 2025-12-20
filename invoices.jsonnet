@@ -301,6 +301,16 @@ local fiftyFiveDegreesRules = [
     },
 ];
 
+// Link Wallet (Stripe)
+local linkWalletRules = [
+    {
+        filter: {
+          query: 'from:(invoice+statements*@stripe.com)',
+        },
+        actions: archiveAndForwardInvoice,
+    },
+];
+
 cypressRules +
 slackRules +
 googleWorkspaceRules +
@@ -318,4 +328,5 @@ opsgenieRules +
 appleRules +
 openAIRules +
 benoRules +
-fiftyFiveDegreesRules
+fiftyFiveDegreesRules +
+linkWalletRules
