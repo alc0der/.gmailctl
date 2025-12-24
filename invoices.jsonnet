@@ -305,6 +305,26 @@ local orbRules = [
     },
 ];
 
+// Meta for Business
+local metaForBusinessRules = [
+    {
+        filter: {
+          and: [
+            {
+              from: 'noreply@business-updates.facebook.com',
+            },
+            {
+              subject: 'Your Meta ads receipt (account ID: 2593593984020128)',
+            },
+            {
+              to: 'ahmad.akilan@qrom.com',
+            },
+          ],
+        },
+        actions: archiveInvoice,
+    },
+];
+
 cypressRules +
 slackRules +
 googleWorkspaceRules +
@@ -324,4 +344,5 @@ openAIRules +
 benoRules +
 fiftyFiveDegreesRules +
 linkWalletRules +
-orbRules
+orbRules +
+metaForBusinessRules
