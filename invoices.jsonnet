@@ -10,7 +10,7 @@ local archiveInvoice = {
 };
 
 local archiveAndForwardInvoice = archiveInvoice + {
-    forward: env.accounts_email,
+    forward: env.invoice_beno_email,
 };
 
 // Cypress
@@ -132,33 +132,10 @@ local awsRules = [
             },
           ],
         },
-        actions: {
-          archive: true,
+        actions: archiveAndForwardInvoice + {
           labels: [
             'AWS Invoices',
           ],
-        },
-    },
-    {
-        filter: {
-          and: [
-            {
-              from: 'no-reply@amazonaws.com',
-            },
-            {
-              subject: 'Immediate action required - Your AWS account',
-            },
-            {
-              subject: 'is past due',
-            },
-          ],
-        },
-        actions: {
-          archive: true,
-          labels: [
-            'AWS Invoices',
-          ],
-          forward: env.accounts_email,
         },
     },
 ];
@@ -311,6 +288,23 @@ local linkWalletRules = [
     },
 ];
 
+// Orb
+local orbRules = [
+    {
+        filter: {
+          and: [
+            {
+              to: 'invoice@beno.com',
+            },
+            {
+              query: 'from:(invoices+*@withorb.com) has:attachment',
+            },
+          ],
+        },
+        actions: archiveInvoice,
+    },
+];
+
 cypressRules +
 slackRules +
 googleWorkspaceRules +
@@ -329,4 +323,5 @@ appleRules +
 openAIRules +
 benoRules +
 fiftyFiveDegreesRules +
-linkWalletRules
+linkWalletRules +
+orbRules
