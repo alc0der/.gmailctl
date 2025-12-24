@@ -48,3 +48,4 @@ noreply-emea@allianz.com
 Bell.CorpMail.Dmarc@bell.ca
 dmarc-report@soverin.net
 dmarc-report@soverin.net
+dmarc.report@interia.pl
