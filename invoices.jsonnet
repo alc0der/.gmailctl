@@ -325,6 +325,23 @@ local metaForBusinessRules = [
     },
 ];
 
+// Maqsam
+local maqsamRules = [
+    {
+        filter: {
+          and: [
+            {
+              from: 'invoicing@maqsam.com',
+            },
+            {
+              query: 'subject:"Your * invoice is available" has:attachment',
+            },
+          ],
+        },
+        actions: archiveInvoice,
+    },
+];
+
 cypressRules +
 slackRules +
 googleWorkspaceRules +
@@ -345,4 +362,5 @@ benoRules +
 fiftyFiveDegreesRules +
 linkWalletRules +
 orbRules +
-metaForBusinessRules
+metaForBusinessRules +
+maqsamRules
