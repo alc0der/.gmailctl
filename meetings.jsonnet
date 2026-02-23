@@ -22,5 +22,23 @@ local googleMeetRules = [
   },
 ];
 
+// 1-1 Meeting Calendar Notifications
+local oneOnOneFilter = {
+  and: [
+    { from: 'calendar-notification@google.com' },
+    { subject: '1-1:' },
+  ],
+};
+
+local oneOnOneRules = [
+  {
+    filter: oneOnOneFilter,
+    actions: {
+      archive: true,
+      labels: [googleMeetLabel.name],
+    },
+  },
+];
+
 // Export all meeting app rules
-googleMeetRules
+googleMeetRules + oneOnOneRules
