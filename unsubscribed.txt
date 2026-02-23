@@ -121,3 +121,5 @@ hello@roboflow.com
 team@mail.vapi.ai
 support@forwardemail.net
 stefan.gavrilov@sysdig.com
+taylor@shop.tiktok.com
+solutions@ukg.com

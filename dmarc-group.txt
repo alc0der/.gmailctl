@@ -50,3 +50,6 @@ dmarc-report@soverin.net
 dmarc-report@soverin.net
 dmarc.report@interia.pl
 noreply-dmarc@tmems-jp.trendmicro.com
+developers@beno.com
+postmaster@etat.lu
+dmarc-reports@heteml.jp
