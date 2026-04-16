@@ -2,3 +2,8 @@ credentials.json
 token.json
 config.jsonnet
 env.libsonnet
+
+# Claude Code
+.claude/*.local.json
+.claude/**/*.log
+CLAUDE.local.md
