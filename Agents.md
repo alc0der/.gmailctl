@@ -1,34 +1,80 @@
-# Directory Overview
+# gmailctl Agent Instructions
 
-This directory contains the configuration for `gmailctl`, a tool for managing Gmail filters as code. The setup is designed to be reusable and to make it easy to add new email addresses to blocklists.
+This repo manages Gmail filters as code using [gmailctl](https://github.com/mbrt/gmailctl). Configuration is written in Jsonnet and applied to Gmail via the Gmail API.
 
-# Key Files
+## Project Structure
 
-*   `gmailctl.libsonnet`: A library of functions for creating Gmail filter rules.
-*   `helpers.libsonnet`: Contains helper functions for reading and parsing lists of email addresses from text files.
-*   `coldCallers.jsonnet`, `dmarc.jsonnet`, `unsolicited-applicants.jsonnet`, `unsubscribed.jsonnet`: These files define the filter rules for different categories of emails. They import email addresses from the corresponding `.txt` files.
-*   `coldcallers.txt`, `dmarc.txt`, `dmarc-group.txt`, `unsolicited-applicants.txt`, `unsubscribed.txt`: These files contain lists of email addresses, one per line.
+- `config.jsonnet` — main entry point; imports all rule modules and declares all labels
+- `env.libsonnet` — user-specific values (author name/email, marketing_email, etc.)
+- `helpers.libsonnet` — utilities for reading `.txt` blocklists into filter rules
+- `gmailctl.libsonnet` — gmailctl standard library
+- `*.jsonnet` — rule modules (coldCallers, dmarc, invoices, meetings, topups, etc.)
+- `*.txt` — email address blocklists loaded by corresponding `.jsonnet` files
 
-# Usage
+## Workflow
 
-The primary use of this directory is to manage Gmail filters.
-
-## Adding a new email address to a blocklist
-
-To add a new email address to a list, append it to the corresponding `.txt` file. For example, to add a new cold caller:
-
+### Validate config syntax
 ```shell
-echo "new.cold.caller@example.com" >> coldcallers.txt
+jsonnet config.jsonnet
 ```
 
-## Applying the filters
+### Preview changes before applying
+```shell
+gmailctl diff
+```
 
-To apply the filters to your Gmail account, you would typically run `gmailctl` and point it to your main configuration file. The `README.md` suggests that the main configuration file is not included in this repository for security reasons, but it would look something like this:
+### Apply changes to Gmail
+```shell
+gmailctl apply --yes
+```
+Always use `--yes` — the interactive prompt doesn't work in non-interactive shells.
+
+## Label conventions
+
+- **Flat labels only** — no `/` nesting (e.g. `Invoices`, not `Notifications/Invoices`)
+- **Multiple labels over one precise label** — prefer composable flat labels (e.g. `Ads` + `Approved`) rather than committing to a taxonomy
+- All labels used in rules must be declared in the `labels:` array in `config.jsonnet`
+
+## Adding a new rule module
+
+1. Create `myrules.jsonnet` that exports an array of `{ filter, actions }` objects
+2. Import it in `config.jsonnet`: `local myRules = import 'myrules.jsonnet';`
+3. Add any new labels to the `labels:` array in `config.jsonnet`
+4. Append `myRules` to the `rules:` array at the bottom of `config.jsonnet`
+5. Run `jsonnet config.jsonnet` to validate, then `gmailctl apply --yes` to apply
+
+## Adding emails to a blocklist
+
+Append the address to the relevant `.txt` file:
+```shell
+echo "spammer@example.com" >> coldcallers.txt
+```
+Then apply: `gmailctl apply --yes`
+
+## Rule structure reference
 
 ```jsonnet
 {
-  rules: originalRules + dmarcRules + coldCallingRules
+  filter: {
+    and: [
+      { from: 'noreply@example.com' },
+      { subject: 'some subject', isEscaped: true },
+    ],
+  },
+  actions: {
+    archive: true,
+    markImportant: false,
+    labels: ['LabelOne', 'LabelTwo'],
+  },
 }
 ```
 
-Where `dmarcRules` and `coldCallingRules` are imported from the `.jsonnet` files in this directory.
+For complex matching, use a raw Gmail query:
+```jsonnet
+{
+  filter: {
+    query: 'from:(foo@bar.com) subject:("hello" OR "world")',
+  },
+  actions: { archive: true, labels: ['MyLabel'] },
+}
+```
